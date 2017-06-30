@@ -4,7 +4,7 @@ author: "cjlortie"
 date: "2017"
 output:
   html_document:
-    theme: spacelab
+    theme: yeti
     toc: yes
     toc_depth: 3
     toc_float: yes
