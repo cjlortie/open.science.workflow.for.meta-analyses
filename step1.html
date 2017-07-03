@@ -254,8 +254,8 @@ library(DT)
 #Search terms####
 search.terms &lt;- read_csv(&quot;data/search.terms.csv&quot;)
 datatable(search.terms)</code></pre>
-<div id="htmlwidget-be0121459bd0932246f0" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-be0121459bd0932246f0">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7"],["1","2","3","4","5","6","final"],["plant facilitat* niche* arid*","plant facilitat* niche* desert*","nurse plant* niche* arid","nurse plant* niche* desert","positive interact* niche* desert*","positive interact* niche* arid*","total after duplicates"],[47,32,16,11,21,29,53],[50,31,19,11,21,35,null]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>search<\/th>\n      <th>terms<\/th>\n      <th>hits<\/th>\n      <th>hits.2017<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-8f89370168739a6d8986" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8f89370168739a6d8986">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7"],["1","2","3","4","5","6","final"],["plant facilitat* niche* arid*","plant facilitat* niche* desert*","nurse plant* niche* arid","nurse plant* niche* desert","positive interact* niche* desert*","positive interact* niche* arid*","total after duplicates"],[47,32,16,11,21,29,53],[50,31,19,11,21,35,null]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>search<\/th>\n      <th>terms<\/th>\n      <th>hits<\/th>\n      <th>hits.2017<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>total.lit &lt;- search.terms %&gt;% filter(search != &quot;final&quot;)
 total.lit</code></pre>
 <pre><code>## # A tibble: 6 x 4
@@ -293,7 +293,8 @@ totals-final.list</code></pre>
 <h3>Additional resources</h3>
 <p>Here is an excellent example of <a href="https://arxiv.org/pdf/1611.02119.pdf">alt-viz</a>.<br />
 If you repeat a search set &gt; 3-6 months later, it is best to match hits to ensure you contrasting the exact same publication sets. Here is some <a href="https://cjlortie.github.io/DOI-matcher/">code associated with matching DOIs</a>.<br />
-<a href="http://onlinelibrary.wiley.com/doi/10.1002/jrsm.1120/abstract">Here is an excellent publication</a> turning the search into 10 clear considerations.</p>
+<a href="http://onlinelibrary.wiley.com/doi/10.1002/jrsm.1120/abstract">Here is an excellent publication</a> turning the search into 10 clear considerations.<br />
+An <a href="https://cran.r-project.org/web/packages/formattable/vignettes/formattable-data-frame.html">alternative</a> to DT::datatable</p>
 </div>
 
 

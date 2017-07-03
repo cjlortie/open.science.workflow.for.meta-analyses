@@ -69,5 +69,6 @@ Select a topic and explore search terms, concept conjuction, and contrast at lea
 ###Additional resources
 Here is an excellent example of [alt-viz](https://arxiv.org/pdf/1611.02119.pdf).  
 If you repeat a search set > 3-6 months later, it is best to match hits to ensure you contrasting the exact same publication sets.  Here is some [code associated with matching DOIs](https://cjlortie.github.io/DOI-matcher/).  
-[Here is an excellent publication](http://onlinelibrary.wiley.com/doi/10.1002/jrsm.1120/abstract) turning the search into 10 clear considerations.
+[Here is an excellent publication](http://onlinelibrary.wiley.com/doi/10.1002/jrsm.1120/abstract) turning the search into 10 clear considerations.  
+An [alternative](https://cran.r-project.org/web/packages/formattable/vignettes/formattable-data-frame.html) to DT::datatable
 
