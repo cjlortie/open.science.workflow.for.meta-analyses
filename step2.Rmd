@@ -1,0 +1,26 @@
+---
+title: 
+author: "cjlortie"
+date: "2017"
+output:
+  html_document:
+    theme: yeti
+    toc: yes
+    toc_depth: 3
+    toc_float: yes
+  pdf_document:
+    toc: yes
+   
+---
+
+<br>
+![](./sort.jpg)     
+<br>
+
+###Step 1. Sort  
+Now the fun begins. Search your returned hits for appropriate studies that satisfy the criteria that you list a priori. Typically, there are a set of simple assumptions for exclusion criteria for a meta-analysis in evidence-based research. 
+
+
+
+###Open science product
+The key element to capture is the criteria. The most typical mechanism to capture the sort workflow is a PRISMA report, and some disciplines have not been as rapid in adopting this synthesis summary tool. A nice description of its importance [here](http://onlinelibrary.wiley.com/doi/10.1890/15.WB.018/full).
