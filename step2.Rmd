@@ -72,4 +72,5 @@ Use your previous search and select a reasonble set of studies to explore the im
 
 ###Additional resources
 Even if you never want to engage in these forms of synthesis, ensure you primary research publications are available to others by embracing the principles of open science and [effective scientific reporting](http://onlinelibrary.wiley.com/wol1/doi/10.1111/2041-210X.12758/full).  
-A [step-by-step guide](http://www.ccace.ed.ac.uk/research/software-resources/systematic-reviews-and-meta-analyses) to the meta versus systematic review decision.
+A [step-by-step guide](http://www.ccace.ed.ac.uk/research/software-resources/systematic-reviews-and-meta-analyses) to the meta versus systematic review decision.  
+The PRISMA flow diagram is required by many journals when submitting a systematic review or meta-analysis. However, several journals including PLOS ONE and PeerJ also require the [PRISMA Checklist (available for donload from site)](http://www.prisma-statement.org) as a supplemental file.
