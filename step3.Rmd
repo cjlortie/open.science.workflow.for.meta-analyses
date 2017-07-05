@@ -14,7 +14,7 @@ output:
 ---
 
 <br>
-![](./sort.jpg)     
+![](./synthesize.jpg)     
 <br>
 
 ###Step 3. Synthesize  
@@ -35,6 +35,8 @@ We typically publish biodiversity data with richness and species occurrence data
 <br>
 
 To build the basic dataframe, we code each study with a unique numeric ID. This facilitates connecting different dataframes and tracking. We record location, categorical classifications that describe the study, and mean, var, and n as separate vectors for each treatment and control within the experimental factor set. Trials as usually encoded with the 1.1, 1.2 notation. These are the norms from within the ecological synthesis community only.
+
+The best to appreciate synthesis data are to see synthesis data!!
 
 ```{r synthesize, warning=FALSE, message=FALSE}
 library(tidyverse)
