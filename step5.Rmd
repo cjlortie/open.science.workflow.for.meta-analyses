@@ -40,7 +40,12 @@ pkgs <- c("mada", "meta", "metafor", "metasens", "mvmeta", "netmeta", "rmeta", "
 
 #effect sizes####
 #if reported within primary studies, you could be ready to go already. If not, the package meta provides a wide variety of standard effect size measures provided you have the data.
-
+cushions <-read_csv("data/cushion-data.csv") #dataset that captured effect sizes directly from plant interaction studies
+data <- cushions %>% group_by(Study) %>% summarise(mean.Rii = mean(Rii), net.var = mean(`Var Rii`))
+library(meta)
+m <- metagen(cushions$Rii, cushions$`Var Rii`)
+forest(m)
+m
 
 ```
 
