@@ -232,7 +232,34 @@ div.tocify {
 <div id="open-science-product" class="section level3">
 <h3>Open science product</h3>
 <p>A <a href="https://en.wikipedia.org/wiki/Forest_plot">forest plot</a> is typically the primary open science research product and assumed to be included in some form within the synthesis publication as a key figure. Ideally, contemporary open science researcher should also publicly and openly disseminate the statistical workflow - i.e. share R code illuminating this element of the workflow and ensuring the meta-statistics like the search and sort processes are reproducible.</p>
-<p>pkgs &lt;- c(“mada”, “meta”, “metafor”, “metasens”, “mvmeta”, “netmeta”, “rmeta”, “ellipse”) install.packages(pkgs, repos=“<a href="http://cran.rstudio.com/" class="uri">http://cran.rstudio.com/</a>”)</p>
+</div>
+<div id="case-study" class="section level3">
+<h3>Case study</h3>
+<p>The book <a href="http://www.springer.com/us/book/9783319214153">Meta-analysis with R</a> provides an extensive set of worked examples including data and R code. The packages ‘meta’ and ‘metafor’ are also bundled with sample datasets. To promote continuity, here are some of the examples from previous steps provided as an indication of the ease of meta-analysis with R. It is not the implementation of the code that limits us in doing meta-analyses but the access to data. The package meta (and metafor) provide most meta-statistical options as functions or arguments within broader functions for all the data differences and data structures that an environmental or natural science reseacher will encounter.</p>
+<pre class="r"><code>#library setup####
+library(tidyverse)
+pkgs &lt;- c(&quot;mada&quot;, &quot;meta&quot;, &quot;metafor&quot;, &quot;metasens&quot;, &quot;mvmeta&quot;, &quot;netmeta&quot;, &quot;rmeta&quot;, &quot;ellipse&quot;) #recommended install for almost every meta-challenge you will encounter, most parsonimous install is 'meta'
+#install.packages(pkgs, repos=&quot;http://cran.rstudio.com/&quot;) #run once per machine not per instance
+
+#effect sizes####
+#if reported within primary studies, you could be ready to go already. If not, the package meta provides a wide variety of standard effect size measures provided you have the data.</code></pre>
+</div>
+<div id="exercise" class="section level3">
+<h3>Exercise</h3>
+<p>Work with your existing synthesis dataframe. Begin with data viz. Generate a forest plot. Fit one meta-statistical model. Examine heterogeneity. List potential sources of biases that are always present in a higher-order synthesis.</p>
+</div>
+<div id="conclusions" class="section level3">
+<h3>Conclusions</h3>
+<ol style="list-style-type: decimal">
+<li></li>
+</ol>
+</div>
+<div id="additional-resources" class="section level3">
+<h3>Additional resources</h3>
+<p><a href="http://www.springer.com/us/book/9783319214153">Meta-analysis with R</a> is a stunning resource.</p>
+<p>The <a href="https://cran.r-project.org/web/packages/meta/index.html">meta</a> vignette is an excellent starting point for an overview of the functions and data in this package.</p>
+<p>The <a href="https://cran.r-project.org/web/packages/metafor/index.html">metafor</a> resources provided by CRAN are similarly useful.</p>
+<p>There are many ‘how-to’ papers published for meta-analysis. <a href="http://onlinelibrary.wiley.com/wol1/doi/10.1348/000711010X502733/full">Here</a> is nice example.</p>
 </div>
 
 
