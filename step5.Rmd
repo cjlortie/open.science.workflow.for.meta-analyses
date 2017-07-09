@@ -32,20 +32,52 @@ A [forest plot](https://en.wikipedia.org/wiki/Forest_plot) is typically the prim
 ###Case study  
 The book [Meta-analysis with R](http://www.springer.com/us/book/9783319214153) provides an extensive set of worked examples including data and R code. The packages 'meta' and 'metafor' are also bundled with sample datasets. To promote continuity, here are some of the examples from previous steps provided as an indication of the ease of meta-analysis with R. It is not the implementation of the code that limits us in doing meta-analyses but the access to data. The package meta (and metafor) provide most meta-statistical options as functions or arguments within broader functions for all the data differences and data structures that an environmental or natural science reseacher will encounter.
 
-```{r statistical model fitting, warning=FALSE, message=FALSE}
+```{r statistical model fitting, warning=FALSE, message=FALSE, fig.width=12, fig.height=12}
 #library setup####
 library(tidyverse)
+library(plotrix) #for quick s.e. calculations
 pkgs <- c("mada", "meta", "metafor", "metasens", "mvmeta", "netmeta", "rmeta", "ellipse") #recommended install for almost every meta-challenge you will encounter, most parsonimous install is 'meta'
 #install.packages(pkgs, repos="http://cran.rstudio.com/") #run once per machine not per instance
 
 #effect sizes####
 #if reported within primary studies, you could be ready to go already. If not, the package meta provides a wide variety of standard effect size measures provided you have the data.
 cushions <-read_csv("data/cushion-data.csv") #dataset that captured effect sizes directly from plant interaction studies
-data <- cushions %>% group_by(Study) %>% summarise(mean.Rii = mean(Rii), net.var = mean(`Var Rii`))
-library(meta)
-m <- metagen(cushions$Rii, cushions$`Var Rii`)
-forest(m)
+data <- cushions %>% group_by(Study) %>% summarise(mean.Rii = mean(Rii), error = std.error(Rii))
+
+library(meta) #nice package for most meta-statistics
+m <- metagen(mean.Rii, error, studlab = Study, data = data) #fit generic meta-analysis to an object
+
+#draw a standard forest plot
+forest(m) #grid-based graphics so a bit of work to resize
+
+#print meta-statistical model you fit
+m #By default, the DerSimonian-Laird estimate (1986) is used in the random effects model (method.tau="DL"), however this argument change be changed to the statistical norm for your field or specific data. another popular method in ecology is the Restricted maximum-likelihood estimator (method.tau="REML")
+
+#inspect heterogeneity
+#This is listed in model output. From 'meta-analysis with r' book for the 'meta' package for instance, Q is the weighted sum of squares about the fixed effect estimate. Large values of Q indicate greater heterogeneity between the individual studies in a meta-analysis, and greater values of the between-study heterogeneity. If p < 0.05, there is 'significant' heterogeneity from study-to-study. Nonetheless in this context, you must contrast the fixed versus random-effects models and the sign of the study-level effect sizes measures to conclude whether the treatment is effective and/or consistent.  
+
+#explore bias
+funnel(m) #plot to explore distribution of effect size measures, asymmetry suggests bias in the field of research
+#test sensitivity of the effect size measure
+#contrast the fixed versus random effect model
+#test the importance of the subgroups -- typically this is the MOST important test for bias - sensitivity
+
+#subgroups we could explore include elevation and the measure used to estimate the effect of this potential keystone species
+
+#elevation
+data <- cushions %>% group_by(Study, elevation) %>% summarise(mean.Rii = mean(Rii), error = std.error(Rii))
+m <- metagen(mean.Rii, error, studlab = Study, byvar = elevation, data = data)
+forest(m) 
 m
+
+#measure
+data <- cushions %>% group_by(Study, measure) %>% summarise(mean.Rii = mean(Rii), error = std.error(Rii))
+m <- metagen(mean.Rii, error, studlab = Study, byvar = measure, data = data) #fit generic meta-analysis to an object
+forest(m, sortvar=measure) 
+m
+
+#and yes, you can do meta-statistics like a GLM with interaction terms
+
 
 ```
 
@@ -65,3 +97,7 @@ The [meta](https://cran.r-project.org/web/packages/meta/index.html) vignette is 
 The [metafor](https://cran.r-project.org/web/packages/metafor/index.html) resources provided by CRAN are similarly useful.
 
 There are many 'how-to' papers published for meta-analysis. [Here](http://onlinelibrary.wiley.com/wol1/doi/10.1348/000711010X502733/full) is nice example.
+
+['forestplot'](https://cran.r-project.org/web/packages/forestplot/forestplot.pdf) is also a nice, well-supported CRAN alt-viz option.
+
+[summary of forest tweaks from meta package](https://rdrr.io/cran/meta/man/forest.html)
