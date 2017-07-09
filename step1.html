@@ -254,8 +254,8 @@ library(DT)
 #Search terms####
 search.terms &lt;- read_csv(&quot;data/search.terms.csv&quot;)
 datatable(search.terms)</code></pre>
-<div id="htmlwidget-87d8645aaa3badb42107" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-87d8645aaa3badb42107">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7"],["1","2","3","4","5","6","final"],["plant facilitat* niche* arid*","plant facilitat* niche* desert*","nurse plant* niche* arid","nurse plant* niche* desert","positive interact* niche* desert*","positive interact* niche* arid*","total after duplicates"],[47,32,16,11,21,29,53],[50,31,19,11,21,35,null]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>search<\/th>\n      <th>terms<\/th>\n      <th>hits<\/th>\n      <th>hits.2017<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-8b5c06d10a7e2727134f" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8b5c06d10a7e2727134f">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7"],["1","2","3","4","5","6","final"],["plant facilitat* niche* arid*","plant facilitat* niche* desert*","nurse plant* niche* arid","nurse plant* niche* desert","positive interact* niche* desert*","positive interact* niche* arid*","total after duplicates"],[47,32,16,11,21,29,53],[50,31,19,11,21,35,null]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>search<\/th>\n      <th>terms<\/th>\n      <th>hits<\/th>\n      <th>hits.2017<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>total.lit &lt;- search.terms %&gt;% filter(search != &quot;final&quot;)
 total.lit</code></pre>
 <pre><code>## # A tibble: 6 x 4

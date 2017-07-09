@@ -12,6 +12,7 @@ output:
   pdf_document:
     toc: yes
 ---
+<br>
 
 ###Zen and the art of scientific synthesis
 <br>
