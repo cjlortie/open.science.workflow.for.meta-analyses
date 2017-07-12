@@ -83,5 +83,7 @@ PRISMA report <br>
 A compiled, derived dataset <br>
 Code and workflow summarizing data (i.e. effect sizes and variances) <br>
 Code to visualize and model data (i.e.  meta-stats) <br>
+Open science publication or open pre-print <br>
+
 
 
