@@ -1,0 +1,20 @@
+name: "open science workflow for meta-analysis"
+navbar:
+  title: "open metas"
+  left:
+    - text: "intro"
+      href: index.html
+    - text: "step1"
+      href: step1.html
+    - text: "step2"
+      href: step2.html    
+    - text: "step3"
+      href: step3.html    
+    - text: "step4"
+      href: step4.html    
+    - text: "step5"
+      href: step5.html
+output_dir: "."
+output:
+  html_document:
+    theme: yeti
