@@ -7,11 +7,14 @@ date: "2017"
 ---
 <br>
 
-###Zen and the art of scientific synthesis
+###Zen and the art of scientific synthesis  
+
 <br>
 ![](./SW-cat.jpg)     
 <br>
+[![DOI](https://zenodo.org/badge/86747746.svg)](https://zenodo.org/badge/latestdoi/86747746)  
 
+<br>
 [Fun deck describing a philosophy of synthesis](https://www.slideshare.net/cjlortie/zen-the-art-of-scientific-synthesis)  
 
 <br>
