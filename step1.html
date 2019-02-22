@@ -22,13 +22,16 @@
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-1.1/default.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-1.1/highlight.js"></script>
-<script src="site_libs/htmlwidgets-0.9/htmlwidgets.js"></script>
-<script src="site_libs/datatables-binding-0.2/datatables.js"></script>
-<link href="site_libs/dt-core-1.10.12/css/jquery.dataTables.min.css" rel="stylesheet" />
-<link href="site_libs/dt-core-1.10.12/css/jquery.dataTables.extra.css" rel="stylesheet" />
-<script src="site_libs/dt-core-1.10.12/js/jquery.dataTables.min.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/htmlwidgets-1.3/htmlwidgets.js"></script>
+<link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="site_libs/datatables-binding-0.5/datatables.js"></script>
+<link href="site_libs/dt-core-1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="site_libs/dt-core-1.10.16/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="site_libs/dt-core-1.10.16/js/jquery.dataTables.min.js"></script>
+<link href="site_libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="site_libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -37,10 +40,12 @@
   }
 </style>
 <script type="text/javascript">
-if (window.hljs && document.readyState && document.readyState === "complete") {
-   window.setTimeout(function() {
-      hljs.initHighlighting();
-   }, 0);
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
 }
 </script>
 
@@ -94,6 +99,9 @@ img {
 }
 .tabbed-pane {
   padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
 }
 button.code-folding-btn:focus {
   outline: none;
@@ -232,7 +240,7 @@ h. review boolean operators in searching</p>
 </div>
 <div id="open-science-product" class="section level3">
 <h3>Open science product</h3>
-<p>To document search process, at the minimum generate an ‘evidence matrix’. The evidence matrix as a synthesis tool was formally pioneered by the evidence-based synthesis expert for public health <a href="https://www.brown.edu/academics/public-health/research/evidence-synthesis-in-health/news/2015-08/joseph-lau-retires">Joseph Lau</a>. It has changed significant, but it a form of summary table highlighting frequencies of search terms to illuminate the frequency of the <em>conjunction</em> of ideas.</p>
+<p>To document search process, at the minimum generate an ‘evidence matrix’. The evidence matrix as a synthesis tool was formally pioneered by the evidence-based synthesis expert for public health <a href="https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(12)60177-9/fulltext">Joseph Lau</a>. It has changed significantly, but it is a form of summary table highlighting frequencies of search terms to illuminate the frequency of the <em>conjunction</em> of ideas.</p>
 <p>Within a contemporary workflow in R, the most facile representation is a table, and there are many excellent packages suitable for tables.</p>
 </div>
 <div id="case-study" class="section level3">
@@ -246,19 +254,19 @@ library(DT)
 #Search terms####
 search.terms &lt;- read_csv(&quot;data/search.terms.csv&quot;)
 datatable(search.terms)</code></pre>
-<div id="htmlwidget-51a7b532c5e01d8ca69f" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-51a7b532c5e01d8ca69f">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7"],["1","2","3","4","5","6","final"],["plant facilitat* niche* arid*","plant facilitat* niche* desert*","nurse plant* niche* arid","nurse plant* niche* desert","positive interact* niche* desert*","positive interact* niche* arid*","total after duplicates"],[47,32,16,11,21,29,53],[50,31,19,11,21,35,null]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>search<\/th>\n      <th>terms<\/th>\n      <th>hits<\/th>\n      <th>hits.2017<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-3f3bcddff87d6818efeb" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-3f3bcddff87d6818efeb">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7"],["1","2","3","4","5","6","final"],["plant facilitat* niche* arid*","plant facilitat* niche* desert*","nurse plant* niche* arid","nurse plant* niche* desert","positive interact* niche* desert*","positive interact* niche* arid*","total after duplicates"],[47,32,16,11,21,29,53],[50,31,19,11,21,35,null]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>search<\/th>\n      <th>terms<\/th>\n      <th>hits<\/th>\n      <th>hits.2017<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>total.lit &lt;- search.terms %&gt;% filter(search != &quot;final&quot;)
 total.lit</code></pre>
 <pre><code>## # A tibble: 6 x 4
-##   search                             terms  hits hits.2017
-##    &lt;chr&gt;                             &lt;chr&gt; &lt;int&gt;     &lt;int&gt;
-## 1      1     plant facilitat* niche* arid*    47        50
-## 2      2   plant facilitat* niche* desert*    32        31
-## 3      3          nurse plant* niche* arid    16        19
-## 4      4        nurse plant* niche* desert    11        11
-## 5      5 positive interact* niche* desert*    21        21
-## 6      6   positive interact* niche* arid*    29        35</code></pre>
+##   search terms                              hits hits.2017
+##   &lt;chr&gt;  &lt;chr&gt;                             &lt;dbl&gt;     &lt;dbl&gt;
+## 1 1      plant facilitat* niche* arid*        47        50
+## 2 2      plant facilitat* niche* desert*      32        31
+## 3 3      nurse plant* niche* arid             16        19
+## 4 4      nurse plant* niche* desert           11        11
+## 5 5      positive interact* niche* desert*    21        21
+## 6 6      positive interact* niche* arid*      29        35</code></pre>
 <pre class="r"><code>totals &lt;- sum(total.lit$hits)
 totals</code></pre>
 <pre><code>## [1] 156</code></pre>
