@@ -22,8 +22,8 @@
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-1.1/default.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -32,10 +32,12 @@
   }
 </style>
 <script type="text/javascript">
-if (window.hljs && document.readyState && document.readyState === "complete") {
-   window.setTimeout(function() {
-      hljs.initHighlighting();
-   }, 0);
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
 }
 </script>
 
@@ -89,6 +91,9 @@ img {
 }
 .tabbed-pane {
   padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
 }
 button.code-folding-btn:focus {
   outline: none;
@@ -249,9 +254,11 @@ $(document).ready(function () {
 </div>
 <div id="workflow" class="section level3">
 <h3>Workflow</h3>
-<p><strong>Purpose:</strong> To examine meta-analysis as a tool for scientific synthesis. This workshop will include a workflow from primary literature compilation to meta-analysis.</p>
-<p><strong>To read or not to read</strong> Meta-analysis is a powerful scientific synthesis tool. The first step to be able to critically read and assess their relative merits because of their increasing frequency in most domains of evidence-based inquiry. Here is a short <a href="http://onlinelibrary.wiley.com/doi/10.1002/jrsm.1109/abstract">‘how-to’ read</a> meta-analyses.</p>
-<p><strong>Learning outcomes:</strong><br />
+<p><strong>Purpose</strong><br />
+To examine meta-analysis as a tool for scientific synthesis. This workshop will include a workflow from primary literature compilation to meta-analysis.</p>
+<p><strong>To read or not to read</strong><br />
+Meta-analysis is a powerful scientific synthesis tool. The first step to be able to critically read and assess their relative merits because of their increasing frequency in most domains of evidence-based inquiry. Here is a short <a href="http://onlinelibrary.wiley.com/doi/10.1002/jrsm.1109/abstract">how-to read meta-analyses</a>.</p>
+<p><strong>Learning outcomes</strong><br />
 1. To appreciate the value of formal scientific syntheses of primary research literature. <br> 2. To understand the difference between a systematic review and meta-analysis. <br> 3. To be able to do a reproducible literature search and filter. <br> 4. To be able to calculate appropriate effect size measures. <br> 5. To be able to visualize and contrast with versus between study effect size variation in R (for derived data) and in effect do a meta-analysis.</p>
 <p><br></p>
 <div class="figure">

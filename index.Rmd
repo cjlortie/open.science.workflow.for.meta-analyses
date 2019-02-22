@@ -49,13 +49,14 @@ Systematic reviews describe the meta-data of a field of research (who, where, wh
 <br>
 
 ###Workflow
-**Purpose:** To examine meta-analysis as a tool for scientific synthesis. This workshop will include a workflow from primary literature compilation to meta-analysis.
+**Purpose**  
+To examine meta-analysis as a tool for scientific synthesis. This workshop will include a workflow from primary literature compilation to meta-analysis.
 
-**To read or not to read**
+**To read or not to read**  
 Meta-analysis is a powerful scientific synthesis tool.
-The first step to be able to critically read and assess their relative merits because of their increasing frequency in most domains of evidence-based inquiry. Here is a short ['how-to' read](http://onlinelibrary.wiley.com/doi/10.1002/jrsm.1109/abstract) meta-analyses.
+The first step to be able to critically read and assess their relative merits because of their increasing frequency in most domains of evidence-based inquiry. Here is a short [how-to read meta-analyses](http://onlinelibrary.wiley.com/doi/10.1002/jrsm.1109/abstract).
 
-**Learning outcomes:**  
+**Learning outcomes**  
 1. To appreciate the value of formal scientific syntheses of primary research literature. <br>
 2. To understand the difference between a systematic review and meta-analysis. <br>
 3. To be able to do a reproducible literature search and filter. <br>
