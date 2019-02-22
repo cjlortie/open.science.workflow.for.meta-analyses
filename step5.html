@@ -22,8 +22,8 @@
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-1.1/default.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -32,10 +32,12 @@
   }
 </style>
 <script type="text/javascript">
-if (window.hljs && document.readyState && document.readyState === "complete") {
-   window.setTimeout(function() {
-      hljs.initHighlighting();
-   }, 0);
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
 }
 </script>
 
@@ -89,6 +91,9 @@ img {
 }
 .tabbed-pane {
   padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
 }
 button.code-folding-btn:focus {
   outline: none;
@@ -215,8 +220,26 @@ $(document).ready(function () {
 <br></p>
 <div id="step-5.-statistics" class="section level3">
 <h3>Step 5. Statistics</h3>
-<p>The field of meta-statistics is a rich and fascinating set of tools, literature, and discussions. Herein, we direct the practioner to several extremely useful resources associated with this specific topic. To become competent with an open science worflow for meta-analysis, a detailed knowledge of the statistics is of course preferable but not critical. A viable philosophy for the appropriate application of meta-statistics is best defined by the following set of assumptions. (1) Know thy ‘derived’ data and the limitations of the set of research summarized. This informs the statistics. (2) All statistics are a tool and a means to end - not the end. (3) The formal application of statistics to data from the t-test to the most advanced analysis you can imagine is an exercise in model fitting. A model is a representation of an idea. Period. Statistics are thus one mechanism that provides the evidence-based synthesis researcher with a tool to represent the ideas that stimulated the synthesis. No more, no less. (4) Description of the patterns across a set of studies or datasets is a powerful discovery tool. Do not underestimate the power of… this side of synthesis (or the force). (5) A meta-analysis is not an experiment and does not directly test a hypothesis. It can provide quantitative evidence and probabilities associed with strength of evidence, differences, and consistency and establish a weighted description of the efficacy of different interventions very broadly. (6) Even more profoundly and not uncommonly, meta-analysis as an open science synthesis research tool can highlight research gaps. (7) An ideal starting point is to assume that simple meta-statistics are akin to an ANOVA but for a population of relatively-independent singular data points. This constellation of points can be modeled as fixed or random. More advanced meta-analyses or differences in the type of data simply shift the perspective from ANOVA to reframing as a GLM (same thing) but then slides along to GLMM and this broader family of thinking. Not dissimilar from primary data statistical thinking. The difference is that we do not have one ‘data’ but ‘many representative data’. Very Seussian. There are four primary processes associated with the statistics step of an open science approach to meta-analysis.</p>
-<p><strong>Key meta-statistical processes</strong> (a) calculate effect size(s)<br />
+<p>The field of meta-statistics is a rich and fascinating set of tools, literature, and discussions. Herein, we direct the practioner to several extremely useful resources associated with this specific topic. To become competent with an open science worflow for meta-analysis, a detailed knowledge of the statistics is of course preferable but not critical. A viable philosophy for the appropriate application.</p>
+<p><strong>Meta-thinking philosophy</strong></p>
+<ol style="list-style-type: decimal">
+<li>Know thy ‘derived’ data and the limitations of the set of research summarized. This informs the statistics.<br />
+</li>
+<li>All statistics are a tool and a means to end - not the end.<br />
+</li>
+<li>The formal application of statistics to data from the t-test to the most advanced analysis you can imagine is an exercise in model fitting. A model is a representation of an idea. Period. Statistics are thus one mechanism that provides the evidence-based synthesis researcher with a tool to represent the ideas that stimulated the synthesis. No more, no less.<br />
+</li>
+<li>Description of the patterns across a set of studies or datasets is a powerful discovery tool. Do not underestimate the power of… this side of synthesis (or the force).<br />
+</li>
+<li>A meta-analysis is not an experiment and does not directly test a hypothesis. It can provide quantitative evidence and probabilities associated with strength of evidence, differences, and consistency and establish a weighted description of the efficacy of different interventions very broadly.<br />
+</li>
+<li>Even more profoundly and not uncommonly, meta-analysis as an open science synthesis research tool can highlight research gaps.<br />
+</li>
+<li>An ideal starting point is to assume that simple meta-statistics are akin to an ANOVA but for a population of relatively-independent singular data points. This constellation of points can be modeled as fixed or random. More advanced meta-analyses or differences in the type of data simply shift the perspective from ANOVA to reframing as a GLM (same thing) but then slides along to GLMM and this broader family of thinking. Not dissimilar from primary data statistical thinking. The difference is that we do not have one ‘dataset’ but ‘many representative data’. Very Seussian.</li>
+</ol>
+<p>There are four primary processes associated with the statistics step of an open science approach to meta-analysis.</p>
+<p><strong>Key meta-statistical processes</strong><br />
+(a) calculate effect size(s)<br />
 (b) visualize effect size data (typically a forest plot)<br />
 (c) fit a meta-statistical model<br />
 (d) explore heterogeneity and bias</p>
@@ -288,7 +311,7 @@ m #By default, the DerSimonian-Laird estimate (1986) is used in the random effec
 ## Random effects model 0.2138 [0.0263; 0.4013]  2.23   0.0254
 ## 
 ## Quantifying heterogeneity:
-##  tau^2 = 0.1230; H = 5.05 [4.38; 5.82]; I^2 = 96.1% [94.8%; 97.1%]
+## tau^2 = 0.1230; H = 5.05 [4.38; 5.82]; I^2 = 96.1% [94.8%; 97.1%]
 ## 
 ## Test of heterogeneity:
 ##       Q d.f.  p-value
@@ -379,17 +402,17 @@ m</code></pre>
 ## Random effects model 0.1602 [0.0258; 0.2947] 2.34   0.0195
 ## 
 ## Quantifying heterogeneity:
-##  tau^2 = 0.1035; H = 3.64 [3.19; 4.16]; I^2 = 92.5% [90.2%; 94.2%]
+## tau^2 = 0.1035; H = 3.64 [3.19; 4.16]; I^2 = 92.5% [90.2%; 94.2%]
 ## 
 ## Test of heterogeneity:
 ##       Q d.f.  p-value
 ##  344.76   26 &lt; 0.0001
 ## 
 ## Results for subgroups (fixed effect model):
-##                    k                   95%-CI      Q    tau^2   I^2
-## elevation = high   9 0.3113 [ 0.2376; 0.3850]  74.82   0.1121 89.3%
-## elevation = low    9 0.0363 [-0.0218; 0.0945]  54.58   0.0446 85.3%
-## elevation = mid    9 0.1837 [ 0.1297; 0.2376] 181.03   0.1745 95.6%
+##                    k                   95%-CI      Q  tau^2   I^2
+## elevation = high   9 0.3113 [ 0.2376; 0.3850]  74.82 0.1121 89.3%
+## elevation = low    9 0.0363 [-0.0218; 0.0945]  54.58 0.0446 85.3%
+## elevation = mid    9 0.1837 [ 0.1297; 0.2376] 181.03 0.1745 95.6%
 ## 
 ## Test for subgroup differences (fixed effect model):
 ##                     Q d.f.  p-value
@@ -397,14 +420,14 @@ m</code></pre>
 ## Within groups  310.43   24 &lt; 0.0001
 ## 
 ## Results for subgroups (random effects model):
-##                    k                   95%-CI      Q    tau^2   I^2
-## elevation = high   9 0.2448 [ 0.0088; 0.4809]  74.82   0.1121 89.3%
-## elevation = low    9 0.0247 [-0.1414; 0.1909]  54.58   0.0446 85.3%
-## elevation = mid    9 0.1923 [-0.1007; 0.4854] 181.03   0.1745 95.6%
+##                    k                   95%-CI      Q  tau^2   I^2
+## elevation = high   9 0.2448 [ 0.0088; 0.4809]  74.82 0.1121 89.3%
+## elevation = low    9 0.0247 [-0.1414; 0.1909]  54.58 0.0446 85.3%
+## elevation = mid    9 0.1923 [-0.1007; 0.4854] 181.03 0.1745 95.6%
 ## 
 ## Test for subgroup differences (random effects model):
-##                     Q d.f.  p-value
-## Between groups   2.56    2   0.2775
+##                     Q d.f. p-value
+## Between groups   2.56    2  0.2775
 ## 
 ## Details on meta-analytical method:
 ## - Inverse variance method
@@ -455,23 +478,23 @@ m</code></pre>
 ## 
 ## Number of studies combined: k = 25
 ## 
-##                                       95%-CI    z  p-value
-## Fixed effect model   0.0147 [0.0035; 0.0259] 2.58   0.0098
-## Random effects model 0.1739 [0.0627; 0.2852] 3.07   0.0022
+##                                       95%-CI    z p-value
+## Fixed effect model   0.0147 [0.0035; 0.0259] 2.58  0.0098
+## Random effects model 0.1739 [0.0627; 0.2852] 3.07  0.0022
 ## 
 ## Quantifying heterogeneity:
-##  tau^2 = 0.0651; H = 5.07 [4.53; 5.68]; I^2 = 96.1% [95.1%; 96.9%]
+## tau^2 = 0.0651; H = 5.07 [4.53; 5.68]; I^2 = 96.1% [95.1%; 96.9%]
 ## 
 ## Test of heterogeneity:
 ##       Q d.f.  p-value
 ##  617.82   24 &lt; 0.0001
 ## 
 ## Results for subgroups (fixed effect model):
-##                       k                    95%-CI     Q    tau^2   I^2
-## measure = diversity   8 -0.0055 [-0.0171; 0.0062] 96.35   0.0198 92.7%
-## measure = presence   10 -0.0538 [-0.1090; 0.0015] 84.66   0.0601 89.4%
-## measure = abundance   7  0.6050 [ 0.5463; 0.6637] 30.86   0.036  80.6%
-## measure = abundace    0      NA                      -- --          --
+##                       k                    95%-CI     Q  tau^2   I^2
+## measure = diversity   8 -0.0055 [-0.0171; 0.0062] 96.35 0.0198 92.7%
+## measure = presence   10 -0.0538 [-0.1090; 0.0015] 84.66 0.0601 89.4%
+## measure = abundance   7  0.6050 [ 0.5463; 0.6637] 30.86 0.0360 80.6%
+## measure = abundace    0      NA                      --     --    --
 ## 
 ## Test for subgroup differences (fixed effect model):
 ##                     Q d.f.  p-value
@@ -479,11 +502,11 @@ m</code></pre>
 ## Within groups  211.87   22 &lt; 0.0001
 ## 
 ## Results for subgroups (random effects model):
-##                       k                   95%-CI     Q    tau^2   I^2
-## measure = diversity   8 0.0727 [-0.0348; 0.1802] 96.35   0.0198 92.7%
-## measure = presence   10 0.0040 [-0.1776; 0.1855] 84.66   0.0601 89.4%
-## measure = abundance   7 0.5286 [ 0.3626; 0.6947] 30.86   0.036  80.6%
-## measure = abundace    0     NA                      -- --          --
+##                       k                   95%-CI     Q  tau^2   I^2
+## measure = diversity   8 0.0727 [-0.0348; 0.1802] 96.35 0.0198 92.7%
+## measure = presence   10 0.0040 [-0.1776; 0.1855] 84.66 0.0601 89.4%
+## measure = abundance   7 0.5286 [ 0.3626; 0.6947] 30.86 0.0360 80.6%
+## measure = abundace    0     NA                      --     --    --
 ## 
 ## Test for subgroup differences (random effects model):
 ##                      Q d.f.  p-value
@@ -565,7 +588,7 @@ m</code></pre>
 ## Random effects model 0.6887 [0.2834; 1.0940] 3.33   0.0009
 ## 
 ## Quantifying heterogeneity:
-##  tau^2 = 0.8481; H = 2.70 [2.37; 3.08]; I^2 = 86.3% [82.2%; 89.5%]
+## tau^2 = 0.8481; H = 2.70 [2.37; 3.08]; I^2 = 86.3% [82.2%; 89.5%]
 ## 
 ## Test of heterogeneity:
 ##       Q d.f.  p-value
@@ -664,17 +687,17 @@ m</code></pre>
 ## Random effects model 0.6887 [0.2834; 1.0940] 3.33   0.0009
 ## 
 ## Quantifying heterogeneity:
-##  tau^2 = 0.8481; H = 2.70 [2.37; 3.08]; I^2 = 86.3% [82.2%; 89.5%]
+## tau^2 = 0.8481; H = 2.70 [2.37; 3.08]; I^2 = 86.3% [82.2%; 89.5%]
 ## 
 ## Test of heterogeneity:
 ##       Q d.f.  p-value
 ##  277.64   38 &lt; 0.0001
 ## 
 ## Results for subgroups (fixed effect model):
-##                      k      MD            95%-CI      Q    tau^2   I^2
-## Region = temperate  34  0.3260 [ 0.2437; 0.4083] 268.59   0.8475 87.7%
-## Region = tropical    4  2.0181 [ 0.7600; 3.2761]   1.60   0       0.0%
-## Region = subartic    1 -0.6000 [-3.1103; 1.9103]   0.00       --    --
+##                      k      MD            95%-CI      Q  tau^2   I^2
+## Region = temperate  34  0.3260 [ 0.2437; 0.4083] 268.59 0.8475 87.7%
+## Region = tropical    4  2.0181 [ 0.7600; 3.2761]   1.60      0  0.0%
+## Region = subartic    1 -0.6000 [-3.1103; 1.9103]   0.00     --    --
 ## 
 ## Test for subgroup differences (fixed effect model):
 ##                     Q d.f.  p-value
@@ -682,14 +705,14 @@ m</code></pre>
 ## Within groups  270.19   36 &lt; 0.0001
 ## 
 ## Results for subgroups (random effects model):
-##                      k      MD            95%-CI      Q    tau^2   I^2
-## Region = temperate  34  0.6450 [ 0.2276; 1.0623] 268.59   0.8475 87.7%
-## Region = tropical    4  2.0181 [ 0.7600; 3.2761]   1.60   0       0.0%
-## Region = subartic    1 -0.6000 [-3.1103; 1.9103]   0.00       --    --
+##                      k      MD            95%-CI      Q  tau^2   I^2
+## Region = temperate  34  0.6450 [ 0.2276; 1.0623] 268.59 0.8475 87.7%
+## Region = tropical    4  2.0181 [ 0.7600; 3.2761]   1.60      0  0.0%
+## Region = subartic    1 -0.6000 [-3.1103; 1.9103]   0.00     --    --
 ## 
 ## Test for subgroup differences (random effects model):
-##                     Q d.f.  p-value
-## Between groups   5.26    2   0.0722
+##                     Q d.f. p-value
+## Between groups   5.26    2  0.0722
 ## 
 ## Details on meta-analytical method:
 ## - Inverse variance method
