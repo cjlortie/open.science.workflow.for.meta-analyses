@@ -60,11 +60,11 @@ datatable(bronchoconstriction) #excellent example of an important meta within ev
 <br>  
 
 ###Exercise
-Build a dataframe for your set of studies from the search and sort meta-steps. Use an spreadsheet app but save as a .csv. Extract mean, n, and variance estimates from a total of 7-10 studies. Note whether effect size measures were reported within each study. Record location of study in lat and long.
+Build a dataframe for your set of studies from the search and sort meta-steps. Use spreadsheet app but save as a .csv. Extract mean, n, and variance estimates from a total of 7-10 studies. Note whether effect size measures were reported within each study. Record location of study in lat and long.
 
 ###Conclusions
 1. To be able to use the formal synthesis tool of a systematic review, topological data from each study are needed including location, method, number of species, hypothesis tested, and relative certainty that the primary study is relevant.  
-2. To be able to do a meta-analysis, either a reported effect size from within a study or an estimate of the mean treatment versus control effect, variance, and sample sizes are needed.  Regression or correlation coefficients can be used as an effect size measure directly but counts including number of species cannot be used in meta-statistics.  
+2. To be able to do a meta-analysis, either a reported effect size from within a study or an estimate of the mean treatment versus control effect, variance, and sample sizes are needed.  Regression or correlation coefficients can be used as an effect size measure directly and counts including number of species can be used in meta-statistics too with some calibration.  
 3. Extract data, build a dataframe, and check data are the three key process for the synthesis step of an open-science workflow for meta-analysis.  
 4. The value of an open data set published in a repository cannot be overstated.
 
