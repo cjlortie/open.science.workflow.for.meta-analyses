@@ -22,8 +22,8 @@
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-1.1/default.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -32,10 +32,12 @@
   }
 </style>
 <script type="text/javascript">
-if (window.hljs && document.readyState && document.readyState === "complete") {
-   window.setTimeout(function() {
-      hljs.initHighlighting();
-   }, 0);
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
 }
 </script>
 
@@ -89,6 +91,9 @@ img {
 }
 .tabbed-pane {
   padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
 }
 button.code-folding-btn:focus {
   outline: none;
@@ -219,7 +224,7 @@ $(document).ready(function () {
 </div>
 <div id="open-science-product" class="section level3">
 <h3>Open science product</h3>
-<p>The primary open science research product is an ‘evidence map’ in some form that describes the what, who, where, when, and why of the research topic. Select the strongest and most important aspect to share and consider publishing this as a stand-alone open science product. Fighshare is an excellent repository for figures and provide a DOI.</p>
+<p>The primary open science research product is an ‘evidence map’ in some form that describes the what, who, where, when, and why of the research topic. Select the strongest and most important aspect to share and consider publishing this as a stand-alone open science product. Fighshare is an excellent repository for figures and provides a DOI.</p>
 </div>
 <div id="case-study" class="section level3">
 <h3>Case study</h3>
@@ -233,25 +238,23 @@ $(document).ready(function () {
 data &lt;- read_csv(&quot;data/niche.data.csv&quot;)
 data</code></pre>
 <pre><code>## # A tibble: 29 x 18
-##       ID                                                         topic
-##    &lt;int&gt;                                                         &lt;chr&gt;
-##  1     2                                        Niche characterization
-##  2     3                                        Niche characterization
-##  3     5                             Niche partioning and interactions
-##  4     9   Niche changes over ontogeny and inter-specific facilitation
-##  5    10        Environmental niche: shade and rainfall of four shrubs
-##  6    11                            Coexistence in grass-shrub steppes
-##  7    15              Niche differentiation/segregation in a shrubland
-##  8    16                   Niche partioning in tree-grass interactions
-##  9    20    Niche partioning among shrub-annuals and biological crusts
-## 10    21 Regeneration niche of six shrubs using one-week-old seedlings
-## # ... with 19 more rows, and 16 more variables: `expansion
-## #   mechanism` &lt;chr&gt;, niche.concept &lt;chr&gt;, application &lt;chr&gt;,
-## #   niche.measurement &lt;chr&gt;, benefactor &lt;chr&gt;, benefactor.life.form &lt;chr&gt;,
-## #   benefactor.family &lt;chr&gt;, beneficiary &lt;chr&gt;,
-## #   beneficiary.life.form &lt;chr&gt;, beneficiary.family &lt;chr&gt;,
-## #   ecosystem.detail &lt;chr&gt;, ecosystem &lt;chr&gt;, lat &lt;dbl&gt;, long &lt;dbl&gt;,
-## #   country &lt;chr&gt;, elevation.m &lt;int&gt;</code></pre>
+##       ID topic `expansion mech… niche.concept application niche.measureme…
+##    &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;            &lt;chr&gt;         &lt;chr&gt;       &lt;chr&gt;           
+##  1     2 Nich… Spatial niche o… regeneration  SDMs for c… Field data plus…
+##  2     3 Nich… Spatial niche o… regeneration  SDMs with … Field surveys o…
+##  3     5 Nich… Spatial niche (… segregation … Coexistence Depth gradient …
+##  4     9 Nich… Temporal niche … regeneration  Coexistenc… Seedling monito…
+##  5    10 Envi… Regeneration ni… regeneration  Plant recr… Field experimen…
+##  6    11 Coex… Spatiotemporal … spatiotempor… Coexistence Modeling with c…
+##  7    15 Nich… Spatial niche v… segregation … coexistence Multi-scale ana…
+##  8    16 Nich… Spatial niche (… segregation … Climate ch… Precipitation m…
+##  9    20 Nich… Spatial niche s… spatiotempor… Coexistenc… Field surveys o…
+## 10    21 Rege… Regeneration ni… regeneration  Shrub recr… Field experimen…
+## # ... with 19 more rows, and 12 more variables: benefactor &lt;chr&gt;,
+## #   benefactor.life.form &lt;chr&gt;, benefactor.family &lt;chr&gt;,
+## #   beneficiary &lt;chr&gt;, beneficiary.life.form &lt;chr&gt;,
+## #   beneficiary.family &lt;chr&gt;, ecosystem.detail &lt;chr&gt;, ecosystem &lt;chr&gt;,
+## #   lat &lt;dbl&gt;, long &lt;dbl&gt;, country &lt;chr&gt;, elevation.m &lt;dbl&gt;</code></pre>
 <pre class="r"><code>require(maps)
 world&lt;-map_data(&quot;world&quot;)
 map&lt;-ggplot() + geom_polygon(data=world, fill=&quot;gray50&quot;, aes(x=long, y=lat, group=group))
