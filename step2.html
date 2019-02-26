@@ -269,8 +269,8 @@ dim(exclusions)</code></pre>
        qualitative = 29, 
        quantitative = 29,
        width = 600, height = 600)</code></pre>
-<div id="htmlwidget-539c5eec028e6100353f" style="width:600px;height:600px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-539c5eec028e6100353f">{"x":{"diagram":"digraph prisma {\n    node [shape=\"box\"];\n    graph [splines=ortho, nodesep=1, dpi = 72]\n    a -> nodups;\n    b -> nodups;\n    a [label=\"Records identified through\ndatabase searching\n(n = 156)\"];\n    b [label=\"Additional records identified\nthrough other sources\n(n = 0)\"]\n    nodups -> incex;\n    nodups [label=\"Records after duplicates removed\n(n = 53)\"];\n    incex -> {ex; ft}\n    incex [label=\"Records screened\n(n = 53)\"];\n    ex [label=\"Records excluded\n(n = 0)\"];\n    {rank=same; incex ex}\n    ft -> {qual; ftex};\n    ft [label=\"Full-text articles assessed\nfor eligibility\n(n = 53)\"];\n    {rank=same; ft ftex}\n    ftex [label=\"Full-text articles excluded,\nwith reasons\n(n = 24)\"];\n    qual -> quant\n    qual [label=\"Studies included in qualitative synthesis\n(n = 29)\"];\n    quant [label=\"Studies included in\nquantitative synthesis\n(meta-analysis)\n(n = 29)\"];\n  }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-75ad11a0dec78d4fc7b5" style="width:600px;height:600px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-75ad11a0dec78d4fc7b5">{"x":{"diagram":"digraph prisma {\n    node [shape=\"box\"];\n    graph [splines=ortho, nodesep=1, dpi = 72]\n    a -> nodups;\n    b -> nodups;\n    a [label=\"Records identified through\ndatabase searching\n(n = 156)\"];\n    b [label=\"Additional records identified\nthrough other sources\n(n = 0)\"]\n    nodups -> incex;\n    nodups [label=\"Records after duplicates removed\n(n = 53)\"];\n    incex -> {ex; ft}\n    incex [label=\"Records screened\n(n = 53)\"];\n    ex [label=\"Records excluded\n(n = 0)\"];\n    {rank=same; incex ex}\n    ft -> {qual; ftex};\n    ft [label=\"Full-text articles assessed\nfor eligibility\n(n = 53)\"];\n    {rank=same; ft ftex}\n    ftex [label=\"Full-text articles excluded,\nwith reasons\n(n = 24)\"];\n    qual -> quant\n    qual [label=\"Studies included in qualitative synthesis\n(n = 29)\"];\n    quant [label=\"Studies included in\nquantitative synthesis\n(meta-analysis)\n(n = 29)\"];\n  }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>#Summary of exclusions
 categories &lt;- exclusions %&gt;% group_by(category) %&gt;% tally() %&gt;% arrange(desc(n))
 categories</code></pre>
@@ -308,7 +308,7 @@ categories</code></pre>
 <h3>Additional resources</h3>
 <p>Even if you never want to engage in these forms of synthesis, ensure you primary research publications are available to others by embracing the principles of open science and <a href="http://onlinelibrary.wiley.com/wol1/doi/10.1111/2041-210X.12758/full">effective scientific reporting</a>.<br />
 A <a href="http://www.ccace.ed.ac.uk/research/software-resources/systematic-reviews-and-meta-analyses">step-by-step guide</a> to the meta versus systematic review decision.<br />
-The PRISMA flow diagram is required by many journals when submitting a systematic review or meta-analysis. However, several journals including PLOS ONE and PeerJ also require the <a href="http://www.prisma-statement.org">PRISMA Checklist (available for donload from site)</a> as a supplemental file.</p>
+The PRISMA flow diagram is required by many journals when submitting a systematic review or meta-analysis. However, several journals including PLOS ONE and PeerJ also require the <a href="http://www.prisma-statement.org">PRISMA Checklist (available for download from site)</a> as a supplemental file.</p>
 </div>
 
 
